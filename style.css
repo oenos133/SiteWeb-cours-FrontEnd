@@ -1,0 +1,90 @@
+h1{
+    font-family: 'Merienda One', cursive; 
+    font-size: 80px;
+}
+
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+/* -----------Navigation---------------- */
+
+nav {
+    position: fixed;
+    height: 70px;
+    width: 100%;
+    background-color: #333;
+    border-bottom: 1px dotted #f1f1f1;
+    background: linear-gradient(to botton, #333333, #626262);
+}
+.logo-menu{
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    width: 50px;
+    z-index: 200;
+    display: none;
+}
+.liste-nav{
+    background-color: #333333;
+    background: linear-gradient(to botton, #333333, #626262);
+    border-bottom: 1px dotted #f1f1f1;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    list-style-type: none ;
+    position: fixed;
+    z-index: 100;
+
+}
+.item-nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.item-nav a {
+    font-size: 25px;
+    color: #f1f1f1;
+    text-decoration: none;
+    margin: 0 20px;
+}
+.item-nav a::after{
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 0%;
+    height: 2px;
+    background-color: #f1f1f1;
+    transition: all 0.2s ease-in-out;
+}
+.item-nav a:hover::after{
+    width: 100%;
+}
+@media screen and (max-width:700px) {
+    .logo-menu{
+        display: block;
+    }
+    .liste-nav{
+        display: none;
+        flex-direction: column;
+        height: auto;
+    }
+    .liste-nav.active{
+        display: block;
+    }
+    .item-nav{
+        height: 70px;
+    }
+    .item-nav:nth-child(1){
+        margin-top: 70px;
+    }
+}
